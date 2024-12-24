@@ -25,4 +25,10 @@ public class TodoResource {
     public Optional<Task> getTaskById(@PathParam("id") int id){
         return taskDAO.getTaskById(id);
     }
+
+    @POST
+    public String createTask(Task task){
+        taskDAO.createTask(task);
+        return "Task created";
+    }
 }

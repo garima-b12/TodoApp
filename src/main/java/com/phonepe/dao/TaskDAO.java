@@ -19,4 +19,7 @@ public interface TaskDAO {
 
     @SqlQuery("SELECT * FROM Tasks")
     List<Task> getAllTasks();
+
+    @SqlUpdate("INSERT INTO Tasks (id, task_description, start_date, target_date) VALUES (:id, :task_description, :start_date, :target_date)")
+    void createTask(@BindBean Task task);
 }
