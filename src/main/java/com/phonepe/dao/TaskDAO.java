@@ -22,4 +22,7 @@ public interface TaskDAO {
 
     @SqlUpdate("INSERT INTO Tasks (id, task_description, start_date, target_date) VALUES (:id, :task_description, :start_date, :target_date)")
     void createTask(@BindBean Task task);
+
+    @SqlUpdate("UPDATE Tasks SET task_description = :task_description, task_status = :task_status, start_date = :start_date, target_date = :target_date WHERE id = :id")
+    void updateTask(@BindBean Task task);
 }

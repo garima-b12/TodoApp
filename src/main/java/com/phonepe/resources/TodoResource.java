@@ -31,4 +31,12 @@ public class TodoResource {
         taskDAO.createTask(task);
         return "Task created";
     }
+
+    @PUT
+    @Path("/{id}")
+    public String updateTask(@PathParam("id")int id, Task task){
+        task.setId(id);
+        taskDAO.updateTask(task);
+        return "Task updated";
+    }
 }
