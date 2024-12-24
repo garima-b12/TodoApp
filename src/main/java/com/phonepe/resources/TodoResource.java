@@ -39,4 +39,11 @@ public class TodoResource {
         taskDAO.updateTask(task);
         return "Task updated";
     }
+
+    @DELETE
+    @Path("{id}")
+    public String deleteTask(@PathParam("id") int id) {
+        taskDAO.deleteTask(id);
+        return "Task deleted";
+    }
 }

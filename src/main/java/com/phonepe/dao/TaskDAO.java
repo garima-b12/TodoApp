@@ -25,4 +25,7 @@ public interface TaskDAO {
 
     @SqlUpdate("UPDATE Tasks SET task_description = :task_description, task_status = :task_status, start_date = :start_date, target_date = :target_date WHERE id = :id")
     void updateTask(@BindBean Task task);
+
+    @SqlUpdate("DELETE FROM Tasks WHERE id = :id")
+    void deleteTask(@Bind("id") int id);
 }
